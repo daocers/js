@@ -42,9 +42,15 @@
         </div>
         <div class="search col-md-3">
             <form class="form form-inline">
-                <input type="text" class="form-control input-group-addon" placeholder="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="">
+                    <div class="input-group-btn">
+                        <button class="btn btn-info">搜索</button>
 
-                <button class="btn btn-info">搜索</button>
+                    </div>
+
+                </div>
+
 
                 <!--<div class="form-group">-->
                     <!--<input type="text" class="form-control" placeholder="">-->
@@ -116,5 +122,18 @@
         </div>
     </div>
 
+    <script>
+        var txt = '<div name="productDetail" style="color: #666666;padding: 25px 0 30px 0;">womend sfddsfsdfds</div>';
+        var reg = /\<div\S*name=\"productDetail\"\S*\>*\<\/div\/>/
+        txt.match(reg);
+
+        var regStr='\<div\s*name\=\"productDetail\"*\>*\<\/div\>';
+        console.log('正则'+regStr);
+        var regx=new RegExp(regStr,'g');
+        var newTxt = '<div name="productDetail">最新文本</div>'
+        var res = txt.replace(regx, newTxt);
+        console.log("res:", res)
+
+    </script>
 </body>
 </html>
