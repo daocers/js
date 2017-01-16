@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线统计</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <style>
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="container"></div>
+
+<script>
+    var txt = '<div>goods</div><div name="productDetail" style="color: #666666;padding: 25px 0 30px 0;">第一条</div><div name="adfa" style="color: #666666;padding: 25px 0 30px 0;">第二条</div>';
+
+//    var reg = '\<div name\\s*=\\s*\\"productDetail\\"[\\s\\S]*\>([\\s\\S?!div]*?)\<\/div\>';
+    var reg = /\<div\s+name\s*=\s*\"productDetail\"[\s\S]*\<\/div\>/g;
+    var reg1 = /\<div\s+id\s*=\s*\"productDetail\"([\s\S]*?\<\/div\>)/g;
+    var find = txt.match(reg1);
+    console.log("find:", find)
+
+    var info = '    <div style="height: 0;border-bottom: 1px #eeeeee dashed">&nbsp;</div>' +
+
+        '<div id="productDetail" style="color: #666666;padding: 25px 0 30px 0;">&nbsp;</div>' +
+
+        '<div style="height: 0;border-bottom: 1px #eeeeee dashed">&nbsp;</div>';
+
+    console.log("info: ", info.replace(reg1, "哈哈哈哈"));
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线统计</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <style>
+        .label > .label-default{
+            display: inline-block;
+        }
+        .show-info > *{
+            display: inline-block;
+        }
+
+        .user-show{
+            height: 100px;
+            width: 80px;
+            display: inline-block;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .user-img > .img-rounded{
+            height: 80px;
+            width: 80px;
+        }
+        .user-name{
+            text-align: center;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="show-info col-md-6">
+            <div class="form form-inline">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        当前在线：
+                    </div>
+                    <input class="form-control col-md-1" style="width: 80px;" readonly type="text" value="1800">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        今日峰值：
+                    </div>
+                    <input class="form-control col-md-1" style="width: 80px;" readonly type="text" value="1800">
+                </div>
+            </div>
+        </div>
+        <div class="search col-md-3">
+            <form class="form form-inline">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="">
+                    <div class="input-group-btn">
+                        <button class="btn btn-info">搜索</button>
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        var txt = '<div name="productDetail" style="color: #666666;padding: 25px 0 30px 0;">womend sfddsfsdfds</div>';
+        var reg = /\<div\S*name=\"productDetail\"\S*\>*\<\/div\/>/
+        txt.match(reg);
+
+        var regStr='\<div\s*name\=\"productDetail\"*\>*\<\/div\>';
+        console.log('正则'+regStr);
+        var regx=new RegExp(regStr,'g');
+        var newTxt = '<div name="productDetail">最新文本</div>'
+        var res = txt.replace(regx, newTxt);
+        console.log("res:", res)
+
+    </script>
+</body>
+</html>
