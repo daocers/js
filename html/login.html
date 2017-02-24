@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线统计</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <style>
+        .box{
+            width: 790px;
+            border: solid 1px gainsboro;
+            position: relative;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+        .info-left{
+            float: left;
+            display: inline-block;
+            width: 260px;
+            /*border: solid 1px blue;*/
+            /*position:  absolute;*/
+            /*left: 0px;*/
+
+
+        }
+        .info-right{
+            float: left;
+            display: inline-block;
+            width: 520px;
+            /*border: solid 1px blue;*/
+            /*position: absolute;*/
+            /*left: 260px;*/
+
+        }
+        .center-block{
+            margin: auto;
+        }
+        .main, .body{
+            min-width: 900px;
+        }
+        .header{
+            height: 80px;
+            border: 1px solid #5bc0de;
+        }
+        .img{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+        }
+        .info{
+            display: inline-block;
+        }
+        .title{
+            height: 30px;
+        }
+        .text{
+            height: 30px;
+        }
+
+        /**/
+        .ctl{
+            background-color: dodgerblue;
+            height: 10px;
+        }
+        .ctr{
+            background-color: #5bb0ff;
+            height: 10px;
+        }
+        .cl{
+            border: 1px solid gainsboro;
+            border-right: 1px dashed gainsboro;
+            height: 500px;
+        }
+        .cr{
+            border: 1px solid gainsboro;
+            border-left: 1px dashed gainsboro;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="header">
+
+        </div>
+        <div class="main">
+            <div class="box">
+                <div class="info-left">
+                    <div style="height: 10px; width: 260px;background-color: #16acde"></div>
+                </div>
+                <div class="info-right">
+                    <div style="height: 10px; width: 520px; background-color: #72d1de">
+
+                    </div>
+                </div>
+                <div class="info-left">
+                    <div style="width: 260px; height: 500px;">
+
+                    </div>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="img">
+                                <img src="../asset/img/feature.png" height="50px" width="50px">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    标题栏
+                                </div>
+                                <div class="text">
+                                    文本信息
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="info-right">
+                    <div style="width: 520px; height: 500px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+
+    </div>
+
+    <div class="container">
+        <div class="header">
+
+        </div>
+        <div class="body">
+            <div class="box">
+                <div class="info-left ctl"></div>
+                <div class="info-right ctr"></div>
+                <div class="info-left cl">
+
+                </div>
+                <div class="info-right cr">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+</html>
