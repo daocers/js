@@ -94,4 +94,4 @@
 .btn.unclick,.btn.unclick:hover{color:#fff;cursor:auto;background-color:#ddd;border-color:#ddd}
 
 .focusinput .txt,.focusinput.txt,.focusinput textarea,textarea.focusinput{border-color: #339bff !important}
-.txt input:focus{border: solid #339bff 1px;}
+input.ef:focus{border: solid #339bff 1px;}

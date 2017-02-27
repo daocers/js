@@ -172,11 +172,16 @@
 <script type="text/javascript" src="../asset/js/jquery-2.2.0.min.js"></script>
 <script language="javascript">
     $(document).ready(function () {
-        var scode = $("#scode").val();
-        if (scode != "") {
-            var str = $("#loginname").val();
-            $("#loginname").val("").focus().val(str);
-        }
+//        var scode = $("#scode").val();
+//        if (scode != "") {
+//            var str = $("#loginname").val();
+//            $("#loginname").val("").focus().val(str);
+//        }
+
+        $("input").bind("focus", function () {
+            console.log("good")
+            $(this).addClass("focusinput");
+        })
     });
 
 </script>
