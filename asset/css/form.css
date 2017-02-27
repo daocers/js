@@ -73,10 +73,9 @@
 .ttag em{position:absolute;width:20px;top:0;right:0;height:26px;background:url(http://img01.51jobcdn.com/im/2016/form/close2.png) center no-repeat}
 
 /*按钮*/
-.p_but{display:inline-block;min-width:80px;height:28px;line-height:28px;font-size:14px;font-family:"Microsoft YaHei";color:#fff;text-align:center;cursor:pointer;margin:0 10px;background-color: #339bff;border:1px solid #339bff;
+.p_but{display:inline-block;min-width:80px;height:28px;line-height:28px;font-size:14px;font-family:"Microsoft YaHei";color:#fff;text-align:center;cursor:pointer;margin:0 10px;background-color:#ff6000;border:1px solid #ff6000;
 	-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;border-radius:2px}
-.p_but:hover{background-color: #16acde;border-color: #16acde
-}
+.p_but:hover{background-color:#ea5800;border-color:#ea5800}
 .p_but.gray{color:#999;background-color:#fff;border-color:#bbb}
 .p_but.gray:hover{background-color:#eee;border-color:#bbb}
 .p_but.geige{color:#ff6000;background-color:#fff2e3;border-color:#ffb865}
@@ -93,5 +92,4 @@
 .btn.on{color:#fff;background-color:#ff9f20}
 .btn.unclick,.btn.unclick:hover{color:#fff;cursor:auto;background-color:#ddd;border-color:#ddd}
 
-.focusinput .txt,.focusinput.txt,.focusinput textarea,textarea.focusinput{border-color: #339bff !important}
-.txt input:focus{border: solid #339bff 1px;}
+.focusinput .txt,.focusinput.txt,.focusinput textarea,textarea.focusinput{border-color:#ff9f20 !important}
