@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe test</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <iframe src="/p/630e2e1ca57f" height="500px" width="700px" id="iframe"></iframe>
+    <button id="btn" class="btn btn-info">获取</button>
+</div>
+<script>
+    $(function () {
+        $("#btn").on("click", function () {
+             var  html = $("#iframe")[0].contentDocument;
+             console.log(html);
+
+        })
+    })
+
+
+</script>
+</body>
+</html>

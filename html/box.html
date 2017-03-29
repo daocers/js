@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form class="form form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2">密码</label>
+                <div class="col-md-3">
+                    <input class="form-control" type="password" placeholder="请输入密码">
+                </div>
+            </div>
+            <button class="btn btn-success confirm" type="button">确定</button>
+        </form>
+    </div>
+
+<script>
+    $(function () {
+        $(".confirm").on("click", function () {
+            console.log("good")
+        })
+    })
+</script>
+</body>
+</html>

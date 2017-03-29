@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="bar">
+
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-info" style="width: 30%; height: 40px;">
+            <span style="height: 30px;">设置信息</span>
+        </div>
+        <div class="progress-bar progress-bar-info progress-bar-striped" style="width:35%;">
+            <span class="glyphicon glyphicon-play"></span>
+            <span>选择用户</span>
+        </div>
+        <div class="progress-bar" style="width: 35%">
+            <span style="color: #5bb0ff">生成试卷</span>
+        </div>
+    </div>
+
+
+    <div class="stepInfo">
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="stepIco stepIco1" id="create">
+            1
+            <div class="stepText" id="createText">
+                创建订单
+            </div>
+        </div>
+        <div class="stepIco stepIco2" id="check">
+            2
+            <div class="stepText" id="checkText">
+                审核订单
+            </div>
+        </div>
+        <div class="stepIco stepIco3" id="produce">
+            3
+            <div class="stepText" id="produceText">
+                生产
+            </div>
+        </div>
+        <div class="stepIco stepIco4" id="delivery">
+            4
+            <div class="stepText" id="deliveryText">
+                配送
+            </div>
+        </div>
+        <div class="stepIco stepIco5" id="received">
+            5
+            <div class="stepText" id="receivedText">
+                签收
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" value="2" id="o_status" />
+
+</div>
+
+</body>
+<script>
+    $(function() {
+        setTimeout("changeDivStyle();", 100); // 0.1秒后展示结果，因为HTML加载顺序，先加载脚本+样式，再加载body内容。所以加个延时
+    });
+    function changeDivStyle() {
+        //        var o_status = $("#o_status").val();    //获取隐藏框值
+        var o_status = 4;
+        if (o_status == 0) {
+            $('#create').css('background', '#DD0000');
+            $('#createText').css('color', '#DD0000');
+        } else if (o_status == 1 || o_status == 2) {
+            $('#check').css('background', '#DD0000');
+            $('#checkText').css('color', '#DD0000');
+        } else if (o_status == 3) {
+            $('#produce').css('background', '#DD0000');
+            $('#produceText').css('color', '#DD0000');
+        } else if (o_status == 4) {
+            $('#delivery').css('background', '#DD0000');
+            $('#deliveryText').css('color', '#DD0000');
+        } else if (o_status >= 5) {
+            $('#received').css('background', '#DD0000');
+            $('#receivedText').css('color', '#DD0000');
+        }
+    }
+</script>
+</html>
