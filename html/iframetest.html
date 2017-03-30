@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iFrame test</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+</head>
+<body>
+    <iframe src="http://localhost:8080" id="pageFrame" style="min-height: 800px; min-width: 1000px;"></iframe>
+    <button class="btn btn-info" type="button" id="btn">外部按钮</button>
+<div class="container" id="box" style="min-height: 300px; min-width: 500px; border: 1px solid lightblue;">
+
+</div>
+
+<script>
+    $("#btn").on("click", function () {
+        var html = $("[name='pageFrame']").content();
+        console.log("html: ", html);
+        $("#box").html(html);
+    })
+</script>
+</body>
+</html>

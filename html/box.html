@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>容器</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form form-horizontal">
+        <div class="form-group">
+            <label class="control-label">密码</label>
+            <div class="col-md-3">
+                <input class="form-control" placeholder="请输入密码...">
+            </div>
+        </div>
+        <button class="btn btn-info" type="button" id="btn">提交</button>
+    </form>
+
+    <div class="row" style="min-height: 500px; border: 1px solid dodgerblue;" id="box">
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#btn").on("click", function () {
+            $.ajax({
+                url: 'inner.html',
+                success:function (data) {
+                    $("#box").html(data);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
