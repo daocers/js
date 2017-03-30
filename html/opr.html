@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考试答题</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <script src="../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <style>
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="row menu-bar form-inline">
+            <div class="input-group">
+                <div class="input-group-addon">输入网址</div>
+                <input class="form-control col-md-2" name="url">
+                <div class="input-group-btn">
+                    <button class="btn btn-info" id="jump">确定</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-md-9 page-container">
+                <iframe id="page" src="trade.html" seamless="seamless" width="800px">
+
+                </iframe>
+            </div>
+            <div class="col-md-3 info-container">
+                <div class="form-inline">
+                    <div class="input-group">
+                        <div class="input-group-addon">点击获取信息</div>
+                        <div class="input-group-btn">
+                            <button class="btn btn-success" id="get">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">你的信息</h3>
+                    </div>
+                    <table class="table table-bordered" id="fieldInfo">
+                        <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>我的录入</th>
+                            <th>分值</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>身份证号码</td>
+                            <td>411503198905138888</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>卡号</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>操作类型</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>金额</td>
+                            <td>1000,000,000.00</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#page").on("load", function () {
+            console.log("iframe loaded。。。");
+            $("#get").trigger("click");
+            var iframe = $("iframe")[0].contentDocument;
+            var $iframe = $(iframe);
+//            console.log($iframe.height)
+            var height = $("iframe")[0].contentWindow.document.documentElement.scrollHeight;
+            console.log("height:", height)
+
+            //另外一种获取height的方法
+            height = $("#page").contents().find("html").height();
+            console.log("height:", height)
+            var width = $("#page").contents().find("html").width();
+            console.log("width: ", width);
+            $("#page").width(width);
+
+            $("#page").height(height + 20);
+        })
+        $("#get").on("click", function () {
+            var iframe = $("iframe")[0].contentDocument;
+            var $iframe = $(iframe);
+            var buffer = "";
+            $iframe.find("input, select").each(function (idx, obj) {
+                var label = $(obj).prev().text();
+                console.log("label: ", label);
+//                console.log("idx: ", idx);
+//                console.log("obj: ", $(obj).val());
+                buffer += "<tr>";
+                buffer += "<td>" + label + "</td><td>" + $(obj).val() + "</td><td><input style='width: 30px;' type='text'></td>"
+                buffer += "</tr>";
+            });
+            $("#fieldInfo").find("tbody").html(buffer);
+        })
+
+        $("#jump").on("click", function () {
+            var url = $("[name='url']").val();
+            console.log("url: ", url);
+            $("#page").attr("src", url);
+        })
+
+    })
+</script>
+</body>
+</html>
