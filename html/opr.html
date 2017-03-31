@@ -7,7 +7,8 @@
     <script src="../asset/js/jquery-2.2.0.min.js"></script>
     <script src="../asset/js/bootstrap.js"></script>
     <style>
-
+        .page-container{
+        }
     </style>
     <script>
 
@@ -16,7 +17,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="row menu-bar form-inline">
+        <div class="row menu-bar form-inline" style="margin-bottom: 15px">
             <div class="input-group">
                 <div class="input-group-addon">输入网址</div>
                 <input class="form-control col-md-2" name="url">
@@ -24,22 +25,22 @@
                     <button class="btn btn-info" id="jump">确定</button>
                 </div>
             </div>
+            <div class="input-group pull-right">
+                <div class="input-group-addon">点击获取信息</div>
+                <div class="input-group-btn">
+                    <button class="btn btn-success" id="get">确定</button>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class=" col-md-9 page-container">
-                <iframe id="page" src="trade.html" seamless="seamless" width="800px">
+        <!--<div class="row">-->
+            <div class="page-container" style="margin-left: -15px;">
+                <iframe id="page" src="trade.html" seamless="seamless" width="900px">
 
                 </iframe>
+                <button class="btn btn-success" id="getPage">保存当前交易页面</button>
             </div>
-            <div class="col-md-3 info-container">
-                <div class="form-inline">
-                    <div class="input-group">
-                        <div class="input-group-addon">点击获取信息</div>
-                        <div class="input-group-btn">
-                            <button class="btn btn-success" id="get">确定</button>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="info-container col-md-6" style="margin-left: -30px;">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">你的信息</h3>
@@ -47,38 +48,19 @@
                     <table class="table table-bordered" id="fieldInfo">
                         <thead>
                         <tr>
-                            <th>名称</th>
-                            <th>我的录入</th>
-                            <th>分值</th>
+                            <th class="col-md-2">名称</th>
+                            <th class="col-md-3">我的录入</th>
+                            <th class="col-md-1">分值</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>身份证号码</td>
-                            <td>411503198905138888</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>卡号</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>操作类型</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>金额</td>
-                            <td>1000,000,000.00</td>
-                            <td></td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
 
+
             </div>
-        </div>
+        <!--</div>-->
     </div>
 </div>
 
@@ -89,6 +71,10 @@
             $("#get").trigger("click");
             var iframe = $("iframe")[0].contentDocument;
             var $iframe = $(iframe);
+
+            $iframe.on("dblclick", "input, select", function () {
+                console.log("double click");
+            });
 //            console.log($iframe.height)
             var height = $("iframe")[0].contentWindow.document.documentElement.scrollHeight;
             console.log("height:", height)
@@ -108,11 +94,11 @@
             var buffer = "";
             $iframe.find("input, select").each(function (idx, obj) {
                 var label = $(obj).prev().text();
-                console.log("label: ", label);
+//                console.log("label: ", label);
 //                console.log("idx: ", idx);
 //                console.log("obj: ", $(obj).val());
                 buffer += "<tr>";
-                buffer += "<td>" + label + "</td><td>" + $(obj).val() + "</td><td><input style='width: 30px;' type='text'></td>"
+                buffer += "<td>" + label + "</td><td>" + $(obj).val() + "</td><td style='padding: 0px;'><input class='form-control' style='height:' type='text'></td>"
                 buffer += "</tr>";
             });
             $("#fieldInfo").find("tbody").html(buffer);
@@ -124,6 +110,29 @@
             $("#page").attr("src", url);
         })
 
+        $("#getPage").on("click", function () {
+            var html = $("#page").contents().find("html").html();
+//            html = $("#page")[0].contentDocument;
+//            console.log("html", html);
+            html = "<html>" + html + "</html>";
+            console.log("iframe", html);
+            $.ajax({
+                url: "savePage.do",
+                type: 'post',
+                data: {"info": html},
+                success: function (data) {
+                    var res = JSON.parse(data);
+                    if(res.code == 0){
+                        console.log("save successed");
+                    }else{
+                        console.log("save error");
+                    }
+                },
+                error: function (data) {
+                    console.log("save error");
+                }
+            })
+        })
     })
 </script>
 </body>
