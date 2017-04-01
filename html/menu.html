@@ -15,7 +15,8 @@
         }
 
         Accordion.prototype.dropdown = function(e) {
-            var $el = e.data.el;
+//            $(".accordion li.open").removeClass("open");
+            var $e = e.data.e;
             $this = $(this),
                 $next = $this.next();
 
@@ -23,7 +24,7 @@
             $this.parent().toggleClass('open');
 
             if (!e.data.multiple) {
-                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                $e.find('.submenu').not($next).slideUp().parent().removeClass('open');
             };
         }
 
@@ -45,10 +46,6 @@
         }
         ul {
             list-style-type: none;
-        }
-        a {
-            color: #b63b4d;
-            text-decoration: none;
         }
         /** =======================
          * Contenedor Principal
@@ -76,6 +73,10 @@
             -webkit-transition: all 0.4s ease;
             -o-transition: all 0.4s ease;
             transition: all 0.4s ease;
+        }
+
+        .accordion .link:hover{
+            color: darkblue;
         }
         .accordion li:last-child .link {
             border-bottom: 0;
@@ -121,7 +122,11 @@
         }
         .submenu li {
             /*padding-left: 20px;*/
-            border-bottom: 1px solid gainsboro;
+            border-bottom: 1px solid whitesmoke;
+        }
+
+        .submenu li:last-child{
+            border-bottom-color: #ccc;
         }
         .submenu a {
             display: block;
