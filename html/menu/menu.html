@@ -18,7 +18,7 @@
             margin-top: -20px;
         }
         .menu-left * {
-            background-color: whitesmoke;
+            background-color: ghostwhite;
             margin: 0;
             padding: 0;
             -webkit-box-sizing: border-box;
@@ -36,7 +36,7 @@
             /*width: 100%;*/
             max-width: 360px;
             margin: 0 20px 20px 0px;
-            background: #FFF;
+            background: ghostwhite;
         }
         .accordion .link {
             cursor: pointer;
@@ -55,6 +55,7 @@
 
         .accordion .link:hover{
             color: darkblue;
+            border-left: 3px solid dodgerblue;
             background-color: white;
         }
         .accordion li:last-child .link {
@@ -78,7 +79,8 @@
         }
         .accordion li.open .link {
             color: darkblue;
-            background-color: #dbf1ff;
+            /*background-color: #dbf1ff;*/
+            border-left: 3px solid dodgerblue;
         }
         .accordion li.open i {
             color: #b63b4d;
@@ -118,8 +120,13 @@
             transition: all 0.25s ease;
         }
         .submenu a:hover {
-            background: ghostwhite;
+            background: white;
             color: grey;
+        }
+        
+        .submenu a.active{
+            background: white;
+            border-right: 2px solid powderblue;;
         }
     </style>
 </head>
@@ -141,13 +148,25 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">基本设置 <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">试题维护</a></li>
-                        <li><a href="#">考试管理</a></li>
-                        <li><a href="#">培训学习</a></li>
-                        <li><a href="#">统计分析</a></li>
-                        <li><a href="#">考试管理</a></li>
+                        <li><a href="#">我的布谷</a></li>
+                        <li><a href="#">我是考生</a></li>
+                        <li><a href="#">我是教师</a></li>
+                        <!--<li><a href="#">培训学习</a></li>-->
+                        <!--<li><a href="#">统计分析</a></li>-->
+                        <!--<li><a href="#">考试管理</a></li>-->
 
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-left form-inline" role="search">
+                            <div class="input-group">
+                                <input class="form-control">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default">搜索</button>
+                                </div>
+                            </div>
+                        </form>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">                <span class="person-center"></span>
                                 个人中心 <span class="caret"></span></a>
@@ -159,26 +178,6 @@
                                 <li><a href="#">安全退出</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-left form-inline" role="search">
-                        <div class="input-group">
-                            <input class="form-control">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default">搜索</button>
-                            </div>
-                        </div>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -255,6 +254,19 @@
 
         $(function () {
             var accordion = new Accordion($('#accordion'), false);
+
+
+            $(".menu-left .submenu li a").on("click", function () {
+                $(".menu-left a").removeClass("active");
+                $(this).addClass("active");
+                var url = $(this).attr("href");
+                if(!url || url == "#" || url == ''){
+                    return false;
+                }
+                $("#main").load(url);
+                return false;
+            })
+
         })
     </script>
 </body>

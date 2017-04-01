@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页导航</title>
+    <link rel="stylesheet" href="../../asset/css/bootstrap.css">
+    <script src="../../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../../asset/js/bootstrap.js"></script>
+    <style>
+        .pagination li a.info:hover, .pagination li.disabled a, .pagination li.disabled a:hover{
+            background-color: white;
+            color: #337ab7;
+            cursor: default;
+        }
+        nav > ul.pagination > li.active > a, nav > ul.pagination > li.active > a:hover, .pagination li.disabled {
+            background: whitesmoke;
+            color: darkblue;
+            border-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <ul class="pagination">
+                <li><a class="info">共12条记录，3页</a> </li>
+                <li><a href="#">首页</a> </li>
+                <li class="disabled"><a href="#">前一页</a> </li>
+                <li><a href="#">1</a> </li>
+                <li><a href="#">2</a> </li>
+                <li class="active"><a href="#">3</a> </li>
+                <li><a href="#">4</a> </li>
+                <li><a href="#">5</a> </li>
+                <li><a href="#">...</a> </li>
+                <li><a href="#">后一页</a> </li>
+                <li><a href="#">尾页</a> </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
