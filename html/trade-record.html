@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>考试答题</title>
+    <title>录制交易信息</title>
     <link rel="stylesheet" href="../asset/css/bootstrap.css">
     <script src="../asset/js/jquery-2.2.0.min.js"></script>
     <script src="../asset/js/bootstrap.js"></script>
     <style>
-        .page-container{
+        .page-container {
         }
     </style>
     <script>
@@ -25,41 +25,62 @@
                     <button class="btn btn-info" id="jump">确定</button>
                 </div>
             </div>
-            <div class="input-group pull-right">
-                <div class="input-group-addon">点击获取信息</div>
-                <div class="input-group-btn">
-                    <button class="btn btn-success" id="get">确定</button>
+
+        </div>
+        <div class="page-container" style="margin-left: -15px;">
+            <iframe id="page" src="trade.html" seamless="seamless" width="1200px">
+
+            </iframe>
+        </div>
+        <div class="row">
+            <div class="">
+                <div class="input-group" style="display: inline-block">
+                    <div class="input-group-addon">点击获取信息</div>
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" id="get">确定</button>
+                    </div>
                 </div>
+                <button class="btn btn-success pull-right" id="getPage">保存当前交易页面</button>
+
+
             </div>
+
+            <div class="pull-right">
+            </div>
+
+
         </div>
         <!--<div class="row">-->
-            <div class="page-container" style="margin-left: -15px;">
-                <iframe id="page" src="trade.html" seamless="seamless" width="900px">
 
-                </iframe>
-                <button class="btn btn-success" id="getPage">保存当前交易页面</button>
-            </div>
 
-            <div class="info-container col-md-6" style="margin-left: -30px;">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">你的信息</h3>
-                    </div>
-                    <table class="table table-bordered" id="fieldInfo">
-                        <thead>
-                        <tr>
-                            <th class="col-md-2">名称</th>
-                            <th class="col-md-3">我的录入</th>
-                            <th class="col-md-1">分值</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+        <div class="info-container col-md-6" style="margin-left: -30px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">我录入的信息</h3>
                 </div>
-
-
+                <table class="table table-bordered" id="fieldInfo">
+                    <thead>
+                    <tr>
+                        <th class="col-md-2">名称</th>
+                        <th class="col-md-3">我的录入</th>
+                        <th class="col-md-1">分值</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <form class="form">
+                <label class="control-label">交易场景描述</label>
+                <textarea class="form-control" rows="10">
+
+                </textarea>
+            </form>
+        </div>
         <!--</div>-->
     </div>
 </div>
@@ -122,9 +143,9 @@
                 data: {"info": html},
                 success: function (data) {
                     var res = JSON.parse(data);
-                    if(res.code == 0){
+                    if (res.code == 0) {
                         console.log("save successed");
-                    }else{
+                    } else {
                         console.log("save error");
                     }
                 },
