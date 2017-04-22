@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单</title>
+
+    <link rel="stylesheet" href="../../asset/css/bootstrap.css">
+    <script src="../../asset/js/jquery-2.2.0.min.js"></script>
+    <script src="../../asset/js/bootstrap.js"></script>
+    <style>
+        .menu-left .list-group{
+            margin-bottom: 0px;
+        }
+
+        .list-group-item .caret{
+            float: right;
+            margin-top: 6px;
+            color: dodgerblue;
+        }
+        .list-group .list-group-item{
+            padding-left: 30px;
+        }
+        .list-group .list-group-item:first-child{
+            padding-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2 menu-left">
+            <ul class="list-group">
+                <a href="#" class="list-group-item"><span class=" caret" style="float: right;"></span>
+                    测试1</a>
+                <a href="#" class="list-group-item">测试221</a>
+                <a  href="#" class="list-group-item">测试23</a>
+                <a href="#" class="list-group-item">测试3</a>
+                <a href="#" class="list-group-item">测试2</a>
+            </ul>
+
+            <ul class="list-group">
+                <a href="#" class="list-group-item"><span class=" caret" style="float: right;"></span>测试1</a>
+                <a href="#" class="list-group-item">测试221</a>
+                <a href="#" class="list-group-item">测试23</a>
+                <a href="#" class="list-group-item">测试3</a>
+                <a href="#" class="list-group-item">测试2</a>
+            </ul>
+
+            <ul class="list-group">
+                <a href="#" class="list-group-item"><span class=" caret" style="float: right;"></span>测试1</a>
+                <a href="#" class="list-group-item">测试221</a>
+                <a href="#" class="list-group-item">测试23</a>
+                <a href="#" class="list-group-item">测试3</a>
+                <a href="#" class="list-group-item">测试2</a>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(function () {
+            $(".list-group").find(".list-group-item:eq(0)").on("click", function () {
+                
+                $(this).nextAll().toggleClass("hidden");
+                return false;
+            });
+
+            $(".list-group").find(".list-group-item:gt(0)").on("click", function () {
+                $(".list-group-item").addClass("hidden");
+                $(".list-group-item").parentsUntil("")
+                $(".list-group-item").removeClass("active");
+                $(this).addClass("active");
+            })
+        })
+    </script>
+</body>
+</html>
