@@ -37,9 +37,9 @@
             border-radius: 0px;
         }
         .menu-left{
-            min-width: 200px;
+            /*min-width: 200px;*/
+            /*max-width: 260px;*/
 
-            /*width: 260px;*/
             padding-left: 0px;
             padding-right: 0px;
             margin-top: -20px;
@@ -60,8 +60,6 @@
          ===========================*/
         .accordion {
             border: 1px solid gainsboro;
-            /*width: 100%;*/
-            /*max-width: 360px;*/
             margin: 0 0px 20px 0px;
             background: ghostwhite;
         }
@@ -70,7 +68,6 @@
             display: block;
             padding: 15px 15px 15px 42px;
             color: darkgray;
-            /*background-color: #8ed7ff;*/
             font-size: 15px;
             font-weight: 400;
             border-bottom: 1px solid #CCC;
@@ -93,7 +90,6 @@
             top: 16px;
             left: 12px;
             font-size: 18px;
-            /*color: #595959;*/
             color: cornflowerblue;
             -webkit-transition: all 0.4s ease;
             -o-transition: all 0.4s ease;
@@ -106,7 +102,6 @@
         }
         .accordion li.open .link {
             color: darkblue;
-            /*background-color: #dbf1ff;*/
             border-left: 3px solid dodgerblue;
         }
         .accordion li.open i {
@@ -124,12 +119,9 @@
  -----------------------------*/
         .submenu {
             display: none;
-            /*background: #dbf1ff;*/
-            /*background: #8ed7ff;*/
             font-size: 14px;
         }
         .submenu li {
-            /*padding-left: 20px;*/
             border-bottom: 1px solid whitesmoke;
         }
 
@@ -215,18 +207,21 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar menu-left">
+        <div class="col-sm-0 col-md-2 sidebar menu-left">
+
             <ul id="accordion" class="accordion">
                 <li>
                     <div class="link">系统管理<span class=" caret" style="float: right;"></span></div>
                     <ul class="submenu">
-                        <li><a href="#">用户管理</a></li>
+                        <li><a href="user/list.do">用户管理</a></li>
                         <li><a href="#">角色管理</a></li>
                         <li><a href="#">权限管理</a></li>
+                        <li><a href="#">机构管理</a></li>
+                        <li><a href="#">部门管理</a></li>
                     </ul>
                 </li>
                 <li>
-                    <div class="link"><i class="fa fa-code"></i>考试管理<i class="fa fa-chevron-down"></i></div>
+                    <div class="link"><i class="fa fa-code"></i>场次管理<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="#">我参加的</a></li>
                         <li><a href="#">我创建的</a></li>
@@ -238,19 +233,26 @@
                     <ul class="submenu">
                         <li><a href="#">题型设置</a></li>
                         <li><a href="#">题目管理</a></li>
-                        <li><a href="#">试卷管理</a></li>
-                        <li><a href="#">Otros dispositivos</a></li>
+                        <li><a href="#">交易题管理</a></li>
+                        <li><a href="#">知识题管理</a></li>
+                        <li><a href="#">交易录制</a></li>
+                        <li><a href="#">翻打凭条管理</a></li>
+
                     </ul>
                 </li>
-                <li><div class="link"><i class="fa fa-globe"></i>考试<i class="fa fa-chevron-down"></i></div>
+                <li><div class="link"><i class="fa fa-globe"></i>考试设置<i class="fa fa-chevron-down"></i></div>
                     <ul class="submenu">
-                        <li><a href="#">Google</a></li>
-                        <li><a href="#">Bing</a></li>
-                        <li><a href="#">Yahoo</a></li>
-                        <li><a href="#">Otros buscadores</a></li>
+                        <li><a href="#">试题策略管理</a></li>
+                        <li><a href="#">试卷策略管理</a></li>
+                        <li><a href="#">试卷管理</a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </li>
             </ul>
+
+
+
+
             <!--<ul class="nav nav-sidebar">-->
                 <!--<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>-->
                 <!--<li><a href="#">Reports</a></li>-->
@@ -270,7 +272,7 @@
                 <!--<li><a href="">Another nav item</a></li>-->
             <!--</ul>-->
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Dashboard</h1>
 
             <div class="row placeholders">
@@ -323,107 +325,15 @@
                         <td>adipiscing</td>
                         <td>elit</td>
                     </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
-                    </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
+
+            <!--<footer class="footer">-->
+                <!--<div class="container text-center">-->
+                    <!--@bugu.co  <a href="#">联系我们</a>-->
+                <!--</div>-->
+            <!--</footer>-->
         </div>
     </div>
 </div>
@@ -440,6 +350,10 @@
 <script src="ie10-viewport-bug-workaround.js"></script>
 
 <script>
+    $("li a[href='user/list.do']").addClass("active");
+    $("li a[href='user/list.do']").parents(".accordion > li").addClass("open");
+    $("li a[href='user/list.do']").parents("ul.submenu").attr("style", "display: block;");
+
     var Accordion = function (e, multiple) {
         this.e = e || {};
         this.multiple = multiple || false;
@@ -475,6 +389,7 @@
             $("#main").load(url);
             return false;
         })
+
 
     })
 </script>
